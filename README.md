@@ -27,7 +27,7 @@ Small businesses waste countless hours managing appointments across multiple pla
 ```text
 Frontend: React.js + TypeScript
 Backend: Node.js + Express
-Database: PostgreSQL + Redis
+Database: MySQL + Redis
 Real-time: WebSockets
 AI: OpenAI Integration
 Messaging: WhatsApp Business API
