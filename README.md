@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./838682d5-4ff2-497e-a358-2e7b2f5d87e4" alt="JustBook Logo" width="600"/>
+  <img src="./838682d5-4ff2-497e-a358-2e7b2f5d87e4.png" alt="JustBook Logo" width="600"/>
 </div>
 
 # 🚀 JustBook - Smart Scheduling SaaS
