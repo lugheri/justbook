@@ -38,7 +38,7 @@ export const routesTypeBusiness: {
     path: '/listAllTypeBusiness',
     handler: listAllTypeBusiness,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameTypeBusiness/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

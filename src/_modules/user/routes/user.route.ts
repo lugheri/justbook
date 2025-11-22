@@ -34,7 +34,7 @@ export const routesUser: {
     path: '/listAllUsers/:active',
     handler: listAllUsers,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameUser/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

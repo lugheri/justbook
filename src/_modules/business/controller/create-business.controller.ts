@@ -1,6 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { BusinessDTO } from '../@dtos/BusinessDTO'
-import { BusinessAlreadyExistsError } from '../errors/business-already-exists-error'
 import { BusinessUseCaseFactory } from '../usecases/factories/business-usecases.factory'
 
 export const createBusiness = async (
@@ -14,9 +13,7 @@ export const createBusiness = async (
 
     reply.status(201).send(businessCreated)
   } catch (err) {
-    if (err instanceof BusinessAlreadyExistsError) {
-      return reply.status(409).send({ error: true, message: err.message })
-    }
+    console.log(err)
     throw err
   }
 }

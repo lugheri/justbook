@@ -10,8 +10,8 @@ export const BusinessDTO = z.object({
   address: z.string().optional().default(''),
   address_2: z.string().optional().default(''),
   plan: z.number().optional().default(0),
-  terms_agreed: z.number(),
-  active: z.number(),
+  terms_agreed: z.number().optional().default(1),
+  active: z.number().optional().default(1),
 })
 export type BusinessType = z.infer<typeof BusinessDTO>
 export const BusinessPartialDTO = BusinessDTO.partial()

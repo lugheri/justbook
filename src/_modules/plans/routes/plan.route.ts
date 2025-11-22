@@ -34,7 +34,7 @@ export const routesPlan: {
     path: '/listAllPlans/:active',
     handler: listAllPlans,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNamePlan/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

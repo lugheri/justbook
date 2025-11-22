@@ -5,12 +5,18 @@ const envSchema = z.object({
   ENVIRONMENT: z
     .enum(['development', 'test', 'production'])
     .default('production'),
+  DATABASE_URL: z.string(),
+
+  DATABASE_HOST: z.string(),
+  DATABASE_USER: z.string(),
+  DATABASE_PASSWORD: z.string(),
+  DATABASE_NAME: z.string(),
+
   SERVICE_PORT: z.coerce.number().default(10001),
   REDIS_HOST: z.string(),
   REDIS_PORT: z.coerce.number(),
   REDIS_PASS: z.string(),
   APP_SECRET: z.string().default('justbook_dev_jwt_flux'),
-  INTERNAL_SERVICE_TOKEN: z.string(),
 })
 const _env = envSchema.safeParse(process.env)
 

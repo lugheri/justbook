@@ -38,7 +38,7 @@ export const routesCustomer: {
     path: '/listAllCustomers',
     handler: listAllCustomers,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameCustomer/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

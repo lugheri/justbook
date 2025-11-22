@@ -38,7 +38,7 @@ export const routesSpecialty: {
     path: '/listAllSpecialties/:active',
     handler: listAllSpecialties,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameSpecialty/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

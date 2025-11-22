@@ -38,7 +38,7 @@ export const routesProduct: {
     path: '/listAllProducts/:active',
     handler: listAllProducts,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameProduct/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {
