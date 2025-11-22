@@ -5,6 +5,7 @@ import { compare } from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { InvalidCredentialsError } from '../errors/auth-invalid-credentials.controller'
 import { UserUseCaseFactory } from '@/_modules/user/usecases/factories/user-usecases.factory'
+import { ResourceNotFoundError } from '@/shared/errors/resource-not-found-error'
 
 export const authenticate = async (
   request: FastifyRequest,
@@ -23,8 +24,7 @@ export const authenticate = async (
       email: username,
     })
     if (!user) {
-      // throw new InvalidCredentialsError()
-      return reply.status(400).send({ message: 'Credenciais inválidas' })
+      throw new InvalidCredentialsError()
     }
     const doesPasswordMatches = await compare(password, user.password)
     if (!doesPasswordMatches) {
@@ -41,6 +41,9 @@ export const authenticate = async (
   } catch (error: any) {
     if (error instanceof InvalidCredentialsError) {
       return reply.status(400).send({ message: error.message })
+    }
+    if (error instanceof ResourceNotFoundError) {
+      return reply.status(400).send({ message: 'Credenciais inválidas' })
     }
     if (error.response) {
       reply.status(400).send({ message: error.response.data.message })

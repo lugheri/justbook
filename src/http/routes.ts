@@ -14,12 +14,14 @@ import { createBusiness } from '@/_modules/business/controller/create-business.c
 import { createUser } from '@/_modules/user/controller/create-user.controller'
 import { authenticate } from '@/_modules/auth/controllers/authenticate.controller'
 import authRoutes from '@/_modules/auth/routes/auth.routes'
+import { updateUser } from '@/_modules/user/controller/update-user.controller'
 
 export const serviceRoutes = async (app: FastifyInstance) => {
   app.get('/checkLiveBusiness', checkLive)
   app.get('/findByEmail/:email', findByEmail)
   app.post('/createAccount', createBusiness)
   app.post('/createNewUser', createUser)
+  app.put('/updatePassword/:user_id', updateUser)
   app.post('/authenticate', authenticate)
   app.register(async (protectedRoutes) => {
     protectedRoutes.addHook('onRequest', authMiddleware)
