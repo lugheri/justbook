@@ -34,7 +34,7 @@ export const routesBusiness: {
     path: '/listAllBusiness/:active/:agreed',
     handler: listAllBusiness,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameBusiness/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {

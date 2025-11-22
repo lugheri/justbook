@@ -7,7 +7,7 @@ export const checkLive = async (
   try {
     reply.status(200).send({
       status: 'online',
-      service: 'smart-calendar',
+      service: 'justbook',
       version: '1.0.0',
       success: true,
     })

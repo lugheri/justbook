@@ -1,4 +1,3 @@
-import { env } from '@/env'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import jwt, {
   JsonWebTokenError,
@@ -34,10 +33,6 @@ const authMiddleware = async (
 ): Promise<void> => {
   const token = request.headers.authorization
 
-  if (token === env.INTERNAL_SERVICE_TOKEN) {
-    request.services = { id: 0, account_id: 0 }
-    return
-  }
   // ========== AUTENTICAÇÃO NORMAL COM JWT ==========
   if (!token) {
     sendAuthError(

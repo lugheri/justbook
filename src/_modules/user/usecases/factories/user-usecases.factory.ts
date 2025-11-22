@@ -8,6 +8,7 @@ import { ListAllUsersUseCase } from '../list-all-user-usecase'
 import { UpdateUserUseCase } from '../update-user-usecase'
 import { RedisCacheRepository } from '@/infra/cache/redis-cache-repository'
 import { FindByNameUserUseCase } from '../find-by-name-user-usecase'
+import { FindByEmailUserUseCase } from '../find-by-email-user-usecase'
 
 const cacheRepository = new RedisCacheRepository()
 const prismaClient = new PrismaClient()
@@ -20,4 +21,5 @@ export const UserUseCaseFactory = {
   listUsers: () => new ListUsersUseCase(userRepository),
   listAllUsers: () => new ListAllUsersUseCase(userRepository),
   findByName: () => new FindByNameUserUseCase(userRepository),
+  findByEmail: () => new FindByEmailUserUseCase(userRepository),
 }

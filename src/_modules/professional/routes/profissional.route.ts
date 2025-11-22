@@ -38,7 +38,7 @@ export const routesProfessional: {
     path: '/listAllProfessionals/:active',
     handler: listAllProfessionals,
   },
-  { method: 'get', path: '/findByName/:name', handler: findByName },
+  { method: 'get', path: '/findByNameProfessional/:name', handler: findByName },
 ]
 
 export default async (app: FastifyInstance) => {
